@@ -1,64 +1,77 @@
 ﻿@model Bowler
 
-<form asp-controller="Home" asp-action="AddBowler" class="">
 
-    <div class="alert-danger" asp-validation-summary="All"></div>
+<div class="m-auto">
+    <div class="d-flex justify-content-center rounded-lg w-100">
 
-    <h4>Bowler Information</h4>
 
-    <input type="hidden" asp-for="BowlerId" />
+        <form asp-controller="Home" asp-action="AddBowler" class="text-center w-50">
 
-    <div class="form-group">
-        <label asp-for="BowlerFirstName">First Name</label>
-        <input asp-for="BowlerFirstName" />
+            <div class="alert-danger" asp-validation-summary="All"></div>
+
+            <h4>Bowler Information</h4>
+
+            <input type="hidden" asp-for="BowlerId" />
+
+            <div class="form-group">
+                <label asp-for="BowlerFirstName">First Name</label>
+                <input asp-for="BowlerFirstName" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerMiddleInit">Middle Initial</label>
+                <input asp-for="BowlerMiddleInit" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerLastName">Last Name</label>
+                <input asp-for="BowlerLastName" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerAddress">Address</label>
+                <input asp-for="BowlerAddress" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerCity">City</label>
+                <input asp-for="BowlerCity" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerState">State</label>
+                <input asp-for="BowlerState" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerZip">Zip</label>
+                <input asp-for="BowlerZip" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerPhoneNumber">Phone</label>
+                <input asp-for="BowlerPhoneNumber" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TeamId">Team</label>
+                <select asp-for="TeamId">
+                    @foreach (Team team in ViewBag.team)
+                    {
+                        <option value="@team.TeamId">@team.TeamName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="float-end">
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </div>
+        </form>
     </div>
+</div>
 
-    <div class="form-group">
-        <label asp-for="BowlerMiddleInit">Middle Initial</label>
-        <input asp-for="BowlerMiddleInit" />
-    </div>
+@section scripts{
 
-    <div class="form-group">
-        <label asp-for="BowlerLastName">Last Name</label>
-        <input asp-for="BowlerLastName" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BowlerAddress">Address</label>
-        <input asp-for="BowlerAddress" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BowlerCity">City</label>
-        <input asp-for="BowlerCity" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BowlerState">State</label>
-        <input asp-for="BowlerState" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BowlerZip">Zip</label>
-        <input asp-for="BowlerZip" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BowlerPhoneNumber">Phone</label>
-        <input asp-for="BowlerPhoneNumber" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="TeamId">Team</label>
-        <select asp-for="TeamId">
-            @foreach(Team team in ViewBag.team)
-            {
-                <option value="@team.TeamId">@team.TeamName</option>
-            }
-        </select>
-    </div>
-
-    <div class="float-end">
-        <input class="btn btn-primary" type="submit" value="Submit"/>
-    </div>
-</form>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
