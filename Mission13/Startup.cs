@@ -27,9 +27,9 @@ namespace Mission13
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IRecipesRepository, EFRecipesRepository>();
+            services.AddScoped<IBowlersRepository, EFBowlersRecipository>();
 
-            services.AddDbContext<RecipesDbContext>(options =>
+            services.AddDbContext<BowlerDbContext>(options =>
            {
                options.UseMySql(Configuration["ConnectionStrings:RecipesDbConnection"]);
 

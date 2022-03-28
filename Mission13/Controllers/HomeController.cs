@@ -13,9 +13,9 @@ namespace Mission13.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private IRecipesRepository _repo  { get; set; }
+        private IBowlersRepository _repo  { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, IRecipesRepository temp)
+        public HomeController(ILogger<HomeController> logger, IBowlersRepository temp)
         {
             _logger = logger;
             _repo = temp;
@@ -23,7 +23,7 @@ namespace Mission13.Controllers
 
         public IActionResult Index()
         {
-            var blah = _repo.Recipes.ToList();
+            var blah = _repo.Bowlers.ToList();
             return View(blah);
         }
 

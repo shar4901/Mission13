@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mission13.Models
 {
-    public class RecipesDbContext :DbContext
+    public class BowlerDbContext : DbContext
     {
-        public RecipesDbContext(DbContextOptions<RecipesDbContext> options) : base(options)
+        public BowlerDbContext(DbContextOptions<BowlerDbContext> options) : base(options)
         {
 
         }
 
-        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Bowler> Bowlers { get; set; }
     }
 }

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Mission13.Models
 {
-    public interface IRecipesRepository
+    public interface IBowlersRepository
     {
-        IQueryable<Recipe> Recipes { get; }
+        IQueryable<Bowler> Bowlers { get; }
     }
 }
