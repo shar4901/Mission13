@@ -31,7 +31,7 @@ namespace Mission13
 
             services.AddDbContext<BowlerDbContext>(options =>
            {
-               options.UseMySql(Configuration["ConnectionStrings:RecipesDbConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:RecipesDbConnection"]);
 
            });
         }
