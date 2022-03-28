@@ -9,14 +9,16 @@
     <tr>
 
         <th>Team Name</th>
-        <th>Captain</th>
+        <th>Team Id</th>
     </tr>
     <tbody>
         @foreach (var team in Model)
         {
-            <tr>
-                <td>@team.TeamName</td>
-            </tr>
+        <tr>
+            <td>@team.TeamName</td>
+            <td>@team.TeamId</td>
+
+        </tr>
         }
     </tbody>
 </table>

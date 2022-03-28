@@ -21,9 +21,7 @@ namespace Mission13.Models
 
         public string BowlerZip { get; set; }
         public string BowlerPhoneNumber { get; set; }
-
-        public int? TeamId{ get; set; }
-        [ForeignKey("TeamId")]
+        public virtual int TeamId { get; set; }
         public virtual Team Team { get; set; }
 
     }
