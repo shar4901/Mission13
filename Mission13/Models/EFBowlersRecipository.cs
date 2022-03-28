@@ -13,5 +13,7 @@ namespace Mission13.Models
             _context = temp;
         }
         public IQueryable<Bowler> Bowlers => _context.Bowlers;
+
+        public IQueryable<Team> Teams => _context.Teams;
     }
 }

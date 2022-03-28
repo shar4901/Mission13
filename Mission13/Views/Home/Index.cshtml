@@ -12,6 +12,7 @@
     <tr>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Team</th>
     </tr>
     <tbody>
         @foreach (var bowler in Model)
@@ -19,6 +20,7 @@
         <tr>
             <td>@bowler.BowlerFirstName </td>
             <td>@bowler.BowlerLastName</td>
+            <td>@bowler.Team.TeamName</td>
         </tr>
         }
     </tbody>

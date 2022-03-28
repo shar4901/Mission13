@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,9 @@ namespace Mission13.Models
         public string BowlerZip { get; set; }
         public string BowlerPhoneNumber { get; set; }
 
-        public int TeamID{ get; set; }
+        public int? TeamId{ get; set; }
+        [ForeignKey("TeamId")]
+        public virtual Team Team { get; set; }
 
     }
 }
