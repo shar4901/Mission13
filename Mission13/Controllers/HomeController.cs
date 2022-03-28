@@ -31,6 +31,8 @@ namespace Mission13.Controllers
                     .OrderBy(x => x.TeamId)
                     .ToList();
                 ViewBag.bowlers = bowlers;
+                return View();
+
             }
             else
             {
@@ -40,10 +42,9 @@ namespace Mission13.Controllers
                     .Where(x => x.TeamId == teamId)
                     .ToList();
                 ViewBag.bowlers = bowlers;
+                return View(team);
 
             }
-            
-            return View();
         }
 
         [HttpGet]
