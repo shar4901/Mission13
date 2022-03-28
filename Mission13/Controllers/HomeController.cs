@@ -26,6 +26,7 @@ namespace Mission13.Controllers
 
             if (teamId == null)
             {
+                ViewBag.activeTeam = null;
                 List<Bowler> bowlers = _repo.Bowlers
                     .OrderBy(x => x.TeamId)
                     .ToList();
@@ -33,10 +34,13 @@ namespace Mission13.Controllers
             }
             else
             {
+                Team team = _repo.Teams.Where(x => x.TeamId == teamId).FirstOrDefault();
+                ViewBag.activeTeam = team;
                 List<Bowler> bowlers = _repo.Bowlers
                     .Where(x => x.TeamId == teamId)
                     .ToList();
                 ViewBag.bowlers = bowlers;
+
             }
             
             return View();
